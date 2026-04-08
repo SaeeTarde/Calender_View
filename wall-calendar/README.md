@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🗓️ Wall Calendar – Interactive React Component
+
+A polished, interactive wall calendar component built with Next.js 14,
+inspired by the physical wall calendar aesthetic.
+
+## Features
+
+- 📅 **Day Range Selector** — click start & end dates with visual highlighting
+- 📝 **Notes Panel** — attach notes to selected ranges, persisted in localStorage
+- 🖼️ **Hero Image** — month-themed imagery with diagonal clip design
+- 🎨 **Theme Switch** — light/dark mode
+- 🎉 **Holiday Markers** — Indian public holidays with tooltip labels
+- 📱 **Fully Responsive** — stacked on mobile, side-by-side on desktop
+- ✨ **Framer Motion** — smooth page-flip animation on month change
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- date-fns
+- localStorage (no backend)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Design Decisions
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Diagonal `clip-path` replicates the physical calendar's chevron aesthetic
+- Range selection uses two-click model (click start → click end)
+- Notes are scoped per month-key in localStorage for zero-backend persistence
+- Holiday dots use a static record — trivially swappable with an API
